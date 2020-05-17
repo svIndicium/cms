@@ -19,6 +19,7 @@ public class Content {
     private Long id;
     private String title;
     private String text;
+
     @ManyToOne
     @JoinColumn(name = "page_id", nullable = false)
     private Page page;
