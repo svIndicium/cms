@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/api")
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
 
 
@@ -19,33 +19,27 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
-    //AUTHENTICATION
-
-
-
-    //USER
     //POST
-    @PostMapping("/users")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createUser(@RequestBody CreateUserRequest createUserRequest){
         return userService.createUser(createUserRequest);
     }
     //GET
-    @GetMapping("/users")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<UserDTO> getUsers(){
         return userService.getAllUsers();
     }
 
-    @GetMapping("/users/{userId}")
+    @GetMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public UserDTO getUser(@PathVariable String userId){
         return userService.getUserById(userId);
     }
 
     //PUT
-    @PutMapping("/users/{userId}")
+    @PutMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public UserDTO updateUser(@RequestBody UpdateUserRequest updateUserRequest, @PathVariable String userId){
         UserDTO userDTO = UserMapper.map(updateUserRequest);
@@ -54,7 +48,7 @@ public class UserController {
     }
 
     //DELETE
-    @DeleteMapping("/users/{userId}")
+    @DeleteMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteUser(@PathVariable String userId){
         userService.deleteUser(userId);
