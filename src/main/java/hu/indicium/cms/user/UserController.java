@@ -1,12 +1,8 @@
 package hu.indicium.cms.user;
 
-import hu.indicium.cms.page.PageMapper;
-import hu.indicium.cms.page.dto.PageDTO;
-import hu.indicium.cms.page.request.UpdatePageRequest;
 import hu.indicium.cms.user.dto.UserDTO;
 import hu.indicium.cms.user.request.CreateUserRequest;
 import hu.indicium.cms.user.request.UpdateUserRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +13,18 @@ import java.util.List;
 @RequestMapping("/api")
 public class UserController {
 
+
     private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    //USER CRUD
+
+    //AUTHENTICATION
+
+
+
+    //USER
     //POST
     @PostMapping("/users")
     @ResponseStatus(HttpStatus.CREATED)
@@ -57,7 +59,5 @@ public class UserController {
     public void deleteUser(@PathVariable String userId){
         userService.deleteUser(userId);
     }
-
-
 
 }
