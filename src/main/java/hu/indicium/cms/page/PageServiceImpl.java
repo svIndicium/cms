@@ -1,7 +1,6 @@
 package hu.indicium.cms.page;
 
 import hu.indicium.cms.page.dto.PageDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
