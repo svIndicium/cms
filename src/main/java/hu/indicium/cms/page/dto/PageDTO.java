@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -16,7 +15,7 @@ public class PageDTO {
     private Long id;
     private String title;
     private String slug;
-    private Date lastEdit;
+    private String lastEdit;
     private String lastEditedBy;
     private List<ContentDTO> Contents = new ArrayList<>();
 }

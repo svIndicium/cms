@@ -5,10 +5,19 @@ import hu.indicium.cms.page.request.CreatePageRequest;
 import hu.indicium.cms.page.request.UpdatePageRequest;
 import org.modelmapper.ModelMapper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class PageMapper {
-    public static PageDTO map(Page page){
+    public static PageDTO map(Page page) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(page, PageDTO.class);
+        PageDTO pageDTO = modelMapper.map(page, PageDTO.class);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd | HH:mm:ss");
+
+        String dateString = format.format(page.getLastEdit());
+        pageDTO.setLastEdit(dateString);
+        return pageDTO;
     }
 
     public static Page map(PageDTO pageDTO){
