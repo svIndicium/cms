@@ -22,7 +22,7 @@ public class PageController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PageDTO createPage(CreatePageRequest page){
+    public PageDTO createPage(@RequestBody CreatePageRequest page){
         PageDTO pageDTO = PageMapper.map(page);
         return pageService.createPage(pageDTO);
     }
@@ -41,9 +41,15 @@ public class PageController {
 
     @PutMapping("/{pageId}")
     @ResponseStatus(HttpStatus.OK)
-    public PageDTO updatePage(UpdatePageRequest page, @PathVariable Long pageId){
+    public PageDTO updatePage(@RequestBody UpdatePageRequest page, @PathVariable Long pageId){
         PageDTO pageDTO = PageMapper.map(page);
         pageDTO.setId(pageId);
         return pageService.updatePage(pageDTO);
+    }
+
+    @DeleteMapping("/{pageId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deletePage(@PathVariable Long pageId){
+        pageService.deletePage(pageId);
     }
 }
