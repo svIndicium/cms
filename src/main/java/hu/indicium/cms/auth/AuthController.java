@@ -1,15 +1,17 @@
 package hu.indicium.cms.auth;
 
+import hu.indicium.cms.auth.request.TokenRequest;
+import hu.indicium.cms.auth.response.TokenResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public
+    public TokenResponse getAuthToken(@RequestBody TokenRequest tokenRequest){
+        return new TokenResponse();
+    }
 }
