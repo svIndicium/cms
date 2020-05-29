@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
+    //POST
     @Override
     public UserDTO createUser(CreateUserRequest createUserRequest) {
         User user = UserMapper.map(createUserRequest);
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
         return UserMapper.map(user);
     }
 
+    //GET
     @Override
     public UserDTO getUserById(String userId) {
         User user = findById(userId);
@@ -43,7 +45,8 @@ public class UserServiceImpl implements UserService {
                 .map(UserMapper::map)
                 .collect(Collectors.toList());
     }
-
+    
+    //PUT
     @Override
     public UserDTO updateUser(UserDTO userDTO) {
         findById(userDTO.getId());
@@ -52,6 +55,7 @@ public class UserServiceImpl implements UserService {
         return UserMapper.map(user);
     }
 
+    //DELETE
     @Override
     public void deleteUser(String userId) {
         User user = findById(userId);
