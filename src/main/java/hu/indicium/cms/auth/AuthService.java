@@ -1,7 +1,9 @@
 package hu.indicium.cms.auth;
 
-import org.springframework.stereotype.Service;
+import hu.indicium.cms.auth.request.TokenRequest;
+import hu.indicium.cms.auth.response.TokenResponse;
 
-@Service
 public interface AuthService {
+    TokenResponse loginUser(TokenRequest tokenRequest);
+
 }
