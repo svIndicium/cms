@@ -3,8 +3,6 @@ package hu.indicium.cms.page;
 import hu.indicium.cms.page.dto.PageDTO;
 import hu.indicium.cms.page.request.CreatePageRequest;
 import hu.indicium.cms.page.request.UpdatePageRequest;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

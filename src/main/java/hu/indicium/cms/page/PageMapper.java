@@ -5,9 +5,7 @@ import hu.indicium.cms.page.request.CreatePageRequest;
 import hu.indicium.cms.page.request.UpdatePageRequest;
 import org.modelmapper.ModelMapper;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class PageMapper {
     public static PageDTO map(Page page) {

@@ -1,8 +1,5 @@
 package hu.indicium.cms.page.dto;
 
-import hu.indicium.cms.menu.Menu;
-import hu.indicium.cms.menu.MenuItem;
-import hu.indicium.cms.page.Content;
 import lombok.Getter;
 import lombok.Setter;
 

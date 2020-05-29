@@ -1,6 +1,5 @@
 package hu.indicium.cms.page;
 
-import hu.indicium.cms.page.Page;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

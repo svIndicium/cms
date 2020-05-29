@@ -1,11 +1,8 @@
 package hu.indicium.cms.user;
 
-import hu.indicium.cms.page.Page;
-import hu.indicium.cms.page.PageMapper;
 import hu.indicium.cms.user.dto.UserDTO;
 import hu.indicium.cms.user.request.CreateUserRequest;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -45,7 +42,7 @@ public class UserServiceImpl implements UserService {
                 .map(UserMapper::map)
                 .collect(Collectors.toList());
     }
-    
+
     //PUT
     @Override
     public UserDTO updateUser(UserDTO userDTO) {
