@@ -9,5 +9,5 @@ import lombok.Setter;
 public class CreateUserRequest {
     private String email;
     private int role;
-    private String Password;
+    private String password;
 }
