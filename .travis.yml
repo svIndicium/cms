@@ -1,0 +1,37 @@
+sudo: required
+
+language: java
+
+jdk: openjdk11
+
+git:
+  depth: 9999999
+
+env:
+  global:
+    - secure: "MEcONQ7H4yae3xXSBztbrJAa2XexCMFAP6vnlFIHHW1kLNlJNiVjqjxzLcbVTqU7EpZq840F7Yvu0EXM+lh/z043qAlDleNmvykzp8e82YKLCAalHk5H/6fCgyC8ZuzhivUQTEb+r7YeRx2LuhEKf6N6H1nkk2pJzYhEIaGQUxvYQFoeDsdHFOM1XQu7HtJMB4W2H31s19RLvpKYgmcsgeYiubKszw+TNaALyafimqTLzjBM5xWnd/kqO6ZUVW0djlrrn6s+gRwUbIq4yCI1GwZxHanuwTz7TRzUUt1/KnDz7Qgfm2UZJ33FVRV1kRs4fRucJ5mtzZQclNhBkpFL9NyL6pfDNnVtkN3QHCQMaUFQWW75+DGSks9duoatfdw95uYDYBkb40jUezHOerd6ryBgEVzFGOY7Hfpj1hrrQS33MO1xrVDiU/wmXJNwTO2sxd6vQ+tiHNWmhq8JD84ICCyi8tzF01W1DQIpOyicW16meDm5OwP11tm6TD462KAimT8i/FY/5bTGQlMnwoN6RQxrhBvJXeoWq4nFi3JUtyHv/aksWjnXY56dZtjwPWwxUsnAE4mk9XZMcAOP4CfkMG1lGzRF691/x7hZE+FAXjDhUGJln0Kzqc4brg18n4i/9V5GvYlJbs9VAugrngGc8br3bl0zuktTMNJMxGC2vJc="
+    - secure: "TEulKTL0Oke01wQFqs9xD8l5Zm5AXLTJi/FUakDvsR/1+O6ewqw7QeXEDt+bJ2LLA0Qzw027Pov0Y5eG6Iu3+Wu0Vc0QwnBSNFd1JKJicxV6wv2m6q3XEQb/3eKvrrtMKyzQSTqMaG6ady4XN1LRzTGIipsSwSzQ92UP17TdUE+4Qzw2Gqw2kkdE7+VTkxVr4AfSwEpxAhJbuXdcdyUC1x9elPXhEezp+W0Sa2eGhs4e0hqkY1Pb96jUl8/eRHl8hQ3I4sUSpoZ5YNzhkPq7UwMVTvTgXalsHU2ENXr2+SIbNj3IN+viSBCsMBXc2U9nYFAkjOxZc9MlKqOCcQ9NpUdWe7i+bG5AIcqEIReFJGsPvXPwA5gVpZBbwVmhJfUUKerdyOEsYU2XnjP5i0yoThKIdht0v2pCdwlfQ4u3MLB5enW+H3IcE9mTuyTeAi1Iy2kC6XjQ+KK0brqO2vaLJt5pvHROWF6C8QFJscF6GqZkZCpc45dBHONue2grDBav+QjXRKQi0/TCOJWi2el4h+riQOeTuWwoFIQ7NI3zMpjYLLnuQMUHzr6km8izpdHi6t7ZMfUUTjOeAFFTCOrf9QxFo1njmSRxvCkKeT2VAPlyWi3agTlcVSZ3/P5oyJOq1YK/8gHG4AdzoUapjzZD1L0hRCFb1NRrILNEdZLLQ9c="
+
+services:
+  - docker
+
+before_script:
+  - bash ./.travis/install-postgres-11.sh
+
+script:
+  - ./mvnw clean package
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "stable"; elif [ "$TRAVIS_BRANCH" == "dev" ]; then echo "latest"; else echo $TRAVIS_BRANCH | tr "/" -; fi`
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    echo "$DOCKER_PASS" | docker login docker.pkg.github.com -u "$DOCKER_USER" --password-stdin;
+    docker build -t docker.pkg.github.com/svindicium/cms/cms:$TAG .;
+    docker push docker.pkg.github.com/svindicium/cms/cms:$TAG;
+  on:
+    all_branches: true
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'

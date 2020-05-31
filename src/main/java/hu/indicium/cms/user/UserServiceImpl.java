@@ -46,8 +46,10 @@ public class UserServiceImpl implements UserService {
     //PUT
     @Override
     public UserDTO updateUser(UserDTO userDTO) {
-        findById(userDTO.getId());
+        User findUser = findById(userDTO.getId());
         User user = UserMapper.map(userDTO);
+
+        user.setPasswordHash(findUser.getPasswordHash());
         user = userRepository.save(user);
         return UserMapper.map(user);
     }

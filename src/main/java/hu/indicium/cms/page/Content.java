@@ -17,6 +17,7 @@ public class Content {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_generator")
     private Long id;
     private String title;
+    @Column(name = "text", columnDefinition = "TEXT")
     private String text;
 
     @ManyToOne

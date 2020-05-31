@@ -1,13 +1,12 @@
-package hu.indicium.cms.page.dto;
+package hu.indicium.cms.page.request;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ContentDTO {
-    private Long id;
+public class CreateContentRequest {
     private String title;
     private String text;
-    private PageDTO pageDTO;
+    private Long pageId;
 }
