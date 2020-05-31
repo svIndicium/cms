@@ -1,5 +1,6 @@
 package hu.indicium.cms.page;
 
+import hu.indicium.cms.page.dto.ContentDTO;
 import hu.indicium.cms.page.dto.PageDTO;
 import hu.indicium.cms.page.request.CreatePageRequest;
 import hu.indicium.cms.page.request.UpdatePageRequest;
