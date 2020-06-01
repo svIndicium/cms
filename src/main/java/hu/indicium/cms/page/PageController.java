@@ -1,5 +1,7 @@
 package hu.indicium.cms.page;
 
+import hu.indicium.cms.menu.MenuService;
+import hu.indicium.cms.menu.dto.MenuDTO;
 import hu.indicium.cms.page.dto.ContentDTO;
 import hu.indicium.cms.page.dto.PageDTO;
 import hu.indicium.cms.page.request.CreatePageRequest;
@@ -14,9 +16,13 @@ import java.util.List;
 public class PageController {
 
     private final PageService pageService;
+    private final ContentService contentService;
+    private final MenuService menuService;
 
-    public PageController(PageService pageService) {
+    public PageController(PageService pageService, ContentService contentService, MenuService menuService) {
         this.pageService = pageService;
+        this.contentService = contentService;
+        this.menuService = menuService;
     }
 
     @PostMapping
@@ -49,6 +55,24 @@ public class PageController {
     @DeleteMapping("/{pageId}")
     @ResponseStatus(HttpStatus.OK)
     public void deletePage(@PathVariable Long pageId){
+
+        PageDTO pageDTO = pageService.getPageById(pageId);
+
+        //Content opzoeken en verwijderen
+        List<ContentDTO> contents = pageDTO.getContents();
+
+        for (ContentDTO contentDTO: contents) {
+            contentService.deleteContent(contentDTO.getId());
+        }
+
+        //kijken of er menus zijn zoja zet page op null
+        List<MenuDTO> menuDTOS = menuService.getMenusByPageId(pageId);
+
+        for(MenuDTO menuDTO: menuDTOS){
+            menuDTO.setPage(null);
+            menuService.updateMenu(menuDTO);
+        }
+
         pageService.deletePage(pageId);
     }
 }
