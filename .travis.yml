@@ -15,7 +15,7 @@ before_script:
 
 script:
   - ./mvnw clean package
-  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "stable"; elif [ "$TRAVIS_BRANCH" == "dev" ]; then echo "latest"; else echo $TRAVIS_BRANCH | tr "/" -; fi`
+  - export TAG= "stable"
 
 deploy:
   skip_cleanup: true
