@@ -15,15 +15,14 @@ before_script:
 
 script:
   - ./mvnw clean package
-  - export TAG= "stable"
 
 deploy:
   skip_cleanup: true
   provider: script
   script:
     echo "$DOCKER_PASS" | docker login docker.pkg.github.com -u "$DOCKER_USER" --password-stdin;
-    docker build -t docker.pkg.github.com/svindicium/cms/cms:$TAG .;
-    docker push docker.pkg.github.com/svindicium/cms/cms:$TAG;
+    docker build -t docker.pkg.github.com/svindicium/cms/cms:stable .;
+    docker push docker.pkg.github.com/svindicium/cms/cms:stable;
   on:
     all_branches: true
 
