@@ -44,6 +44,14 @@ public class MenuServiceImpl implements MenuService{
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<MenuDTO> getMenusByPageId(Long pageId) {
+        List<Menu> menus = menuRepository.findByPageId(pageId);
+        return menus.stream()
+                .map(MenuMapper::map)
+                .collect(Collectors.toList());
+    }
+
     //PUT
     @Override
     public MenuDTO updateMenu(MenuDTO menuDTO) {
