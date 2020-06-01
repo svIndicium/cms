@@ -22,7 +22,7 @@ public class Menu {
     private String naam;
 
     @ManyToOne
-    @JoinColumn(name = "page_id", nullable = false)
+    @JoinColumn(name = "page_id", nullable = true)
     private Page page;
 
     @OneToMany(mappedBy = "menu")

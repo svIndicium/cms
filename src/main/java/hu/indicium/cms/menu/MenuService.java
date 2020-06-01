@@ -14,6 +14,7 @@ public interface MenuService {
     //GET
     MenuDTO getMenuById(Long menuId);
     List<MenuDTO> getAllMenus();
+    List<MenuDTO> getMenusByPageId(Long pageId);
 
     //PUT
     MenuDTO updateMenu(MenuDTO menuDTO);
