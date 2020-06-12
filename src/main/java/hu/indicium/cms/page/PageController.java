@@ -7,6 +7,7 @@ import hu.indicium.cms.page.dto.PageDTO;
 import hu.indicium.cms.page.request.CreatePageRequest;
 import hu.indicium.cms.page.request.UpdatePageRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class PageController {
         PageDTO pageDTO = PageMapper.map(page);
         return pageService.createPage(pageDTO);
     }
-
+    @PreAuthorize("hasAuthority('Admin')")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<PageDTO> getPages(){

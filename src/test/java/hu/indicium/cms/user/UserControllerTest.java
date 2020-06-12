@@ -57,7 +57,7 @@ public class UserControllerTest {
         userDTO = new UserDTO();
         userDTO.setId("testid");
         userDTO.setEmail("rhettvankorlaar@gmail.com");
-        userDTO.setRole(1);
+        userDTO.setRole("Admin");
     }
 
     @Test
