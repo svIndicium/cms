@@ -32,7 +32,6 @@ public class PageController {
         PageDTO pageDTO = PageMapper.map(page);
         return pageService.createPage(pageDTO);
     }
-    @PreAuthorize("hasAuthority('Admin')")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<PageDTO> getPages(){
