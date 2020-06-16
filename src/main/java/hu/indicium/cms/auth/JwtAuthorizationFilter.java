@@ -31,14 +31,10 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
         String token = tokenProvider.resolveToken(request);
 
         if (token == null) {
-            logger.warn("Token is null exiting filter");
             chain.doFilter(request,response);
             return;
         }
-
-
         UsernamePasswordAuthenticationToken authenticationToken = tokenProvider.getAuthentication(token);
-
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         logger.warn("User " + authenticationToken.getCredentials() + "was authenticated");
         chain.doFilter(request,response);

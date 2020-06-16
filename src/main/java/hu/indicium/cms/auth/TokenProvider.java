@@ -5,6 +5,7 @@ import hu.indicium.cms.user.User;
 import hu.indicium.cms.user.UserMapper;
 import hu.indicium.cms.user.dto.UserDTO;
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -15,10 +16,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -31,21 +29,43 @@ public class TokenProvider {
     @Value("${jwt.expiration}")
     private int expiration;
 
-    public TokenProvider() {
+    private final RefreshRepository refreshRepository;
+
+    public TokenProvider(RefreshRepository refreshRepository) {
+        this.refreshRepository = refreshRepository;
     }
 
     public TokenResponse generateToken(User user) {
         UserDTO userDTO = UserMapper.map(user);
+
+        //Get calender to manage expiration
         Calendar c = Calendar.getInstance();
         c.add(Calendar.MINUTE, expiration);
+
+        //Unique id generator for the tokens
+        UUID tokenId = UUID.randomUUID();
+        UUID refreshId = UUID.randomUUID();
+
         String token = Jwts.builder()
                 .setSubject(userDTO.getEmail())
                 .setExpiration(c.getTime())
                 .claim("role", userDTO.getRole())
+                .claim("jti", tokenId.toString())
                 .signWith(SignatureAlgorithm.HS512, secretKey)
                 .compact();
 
-        return new TokenResponse(token);
+        RefreshToken refreshToken = new RefreshToken();
+        refreshToken.setCreationDate(c.getTime());
+        refreshToken.setInvalidated(false);
+        refreshToken.setJwtId(tokenId.toString());
+
+        refreshId = UUID.randomUUID();
+        refreshToken.setToken(refreshId.toString());
+        refreshToken.setUser(user);
+
+        refreshRepository.save(refreshToken);
+
+        return new TokenResponse(token, refreshId.toString());
     }
 
     public UserDTO getPrincipal(String token) {
@@ -73,6 +93,10 @@ public class TokenProvider {
     UsernamePasswordAuthenticationToken getAuthentication(final String token) {
         Collection<? extends GrantedAuthority> authorities = null;
         final JwtParser jwtParser = Jwts.parser().setSigningKey(secretKey);
+
+        if(token == null){
+            return null;
+        }
 
         final Jws<Claims> claimsJws = jwtParser.parseClaimsJws(token);
 

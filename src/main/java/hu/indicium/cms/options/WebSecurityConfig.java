@@ -30,7 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/auth").permitAll()
-                .and().addFilterBefore(new JwtAuthorizationFilter(authenticationManager(), tokenProvider), UsernamePasswordAuthenticationFilter.class);
+                .and().addFilter(new JwtAuthorizationFilter(authenticationManager(), tokenProvider));
     }
 
     @Bean

@@ -1,5 +1,6 @@
 package hu.indicium.cms.auth;
 
+import hu.indicium.cms.auth.request.RefreshTokenRequest;
 import hu.indicium.cms.auth.request.TokenRequest;
 import hu.indicium.cms.auth.response.TokenResponse;
 import org.springframework.http.HttpStatus;
@@ -17,13 +18,24 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @PostMapping
+    @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<TokenResponse> getAuthToken(@RequestBody TokenRequest tokenRequest){
-        if(Objects.equals(tokenRequest.username, "") || Objects.equals(tokenRequest.password, "")){
+        if(Objects.equals(tokenRequest.getUsername(), "") || Objects.equals(tokenRequest.getPassword(), "")){
             return ResponseEntity.notFound().build();
         }
         TokenResponse tokenResponse = authService.loginUser(tokenRequest);
+        if(tokenResponse == null){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(tokenResponse);
+    }
+
+    @PostMapping("/refresh")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<TokenResponse> refreshToken(@RequestBody RefreshTokenRequest refreshTokenRequest){
+        TokenResponse tokenResponse = authService.refreshUser(refreshTokenRequest);
         if(tokenResponse == null){
             return ResponseEntity.notFound().build();
         }
