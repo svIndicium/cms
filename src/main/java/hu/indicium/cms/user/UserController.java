@@ -3,9 +3,14 @@ package hu.indicium.cms.user;
 import hu.indicium.cms.user.dto.UserDTO;
 import hu.indicium.cms.user.request.CreateUserRequest;
 import hu.indicium.cms.user.request.UpdateUserRequest;
+import org.springframework.context.annotation.Role;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
@@ -19,6 +24,7 @@ public class UserController {
         this.userService = userService;
     }
     //POST
+    @PreAuthorize("hasAuthority('Admin')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createUser(@RequestBody CreateUserRequest createUserRequest){
@@ -26,11 +32,14 @@ public class UserController {
     }
     //GET
     @GetMapping
+    @PreAuthorize("hasAuthority('Admin')")
     @ResponseStatus(HttpStatus.OK)
     public List<UserDTO> getUsers(){
+        System.out.println(SecurityContextHolder.getContext().getAuthentication().getAuthorities());
         return userService.getAllUsers();
     }
 
+    @PreAuthorize("hasAuthority('Admin')")
     @GetMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public UserDTO getUser(@PathVariable String userId){
@@ -38,6 +47,7 @@ public class UserController {
     }
 
     //PUT
+    @PreAuthorize("hasAuthority('Admin')")
     @PutMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public UserDTO updateUser(@RequestBody UpdateUserRequest updateUserRequest, @PathVariable String userId){
@@ -47,6 +57,7 @@ public class UserController {
     }
 
     //DELETE
+    @PreAuthorize("hasAuthority('Admin')")
     @DeleteMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteUser(@PathVariable String userId){

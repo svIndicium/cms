@@ -8,8 +8,12 @@ import org.modelmapper.ModelMapper;
 public class UserMapper {
 
     public static UserDTO map(User user){
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(user, UserDTO.class);
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(user.getId());
+        userDTO.setEmail(user.getEmail());
+        String role = user.getRole() == 1 ? "Admin" : "Auteur";
+        userDTO.setRole(role);
+        return userDTO;
     }
 
     public static User map(UserDTO userDTO){
