@@ -11,7 +11,12 @@ public class UserMapper {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setEmail(user.getEmail());
-        String role = user.getRole() == 1 ? "Admin" : "Auteur";
+        String role;
+        if(user.getRole() == 1){
+            role = "Admin";
+        }else{
+            role = "Auteur";
+        }
         userDTO.setRole(role);
         return userDTO;
     }

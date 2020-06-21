@@ -22,8 +22,13 @@ public class ContentMapper {
     }
 
     public static ContentDTO map(CreateContentRequest createContentRequest){
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(createContentRequest, ContentDTO.class);
+        ContentDTO contentDTO = new ContentDTO();
+        contentDTO.setText(createContentRequest.getText());
+        contentDTO.setTitle(createContentRequest.getTitle());
+        PageDTO pageDTO = new PageDTO();
+        pageDTO.setId(createContentRequest.getPageId());
+        contentDTO.setPageDTO(pageDTO);
+        return contentDTO;
     }
 
     public static ContentDTO map(UpdateContentRequest updateContentRequest){
