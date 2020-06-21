@@ -6,6 +6,7 @@ import hu.indicium.cms.page.request.CreateContentRequest;
 import hu.indicium.cms.page.request.UpdateContentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,16 +21,12 @@ public class ContentController {
     }
 
     //POST
+    @PreAuthorize("hasAnyAuthority('Admin', 'Auteur')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ContentDTO createContent(@RequestBody CreateContentRequest createContentRequest) {
         //Map request to DTO
         ContentDTO contentDTO = ContentMapper.map(createContentRequest);
-
-        //Add PageId to content to bind them.
-        PageDTO pageDTO = new PageDTO();
-        pageDTO.setId(createContentRequest.getPageId());
-        contentDTO.setPageDTO(pageDTO);
 
         //Create and return content
         return contentService.createContent(contentDTO);
@@ -49,6 +46,7 @@ public class ContentController {
     }
 
     //PUT
+    @PreAuthorize("hasAnyAuthority('Admin', 'Auteur')")
     @PutMapping("/{contentId}")
     @ResponseStatus(HttpStatus.OK)
     public ContentDTO updateContent(@PathVariable Long contentId, @RequestBody UpdateContentRequest updateContentRequest){
@@ -58,6 +56,7 @@ public class ContentController {
     }
 
     //DELETE
+    @PreAuthorize("hasAnyAuthority('Admin', 'Auteur')")
     @DeleteMapping("/{contentId}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteContent(@PathVariable Long contentId){

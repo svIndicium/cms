@@ -1,11 +1,7 @@
 package hu.indicium.cms.menu;
 
 import hu.indicium.cms.menu.dto.MenuDTO;
-import hu.indicium.cms.menu.request.CreateMenuRequest;
-import hu.indicium.cms.page.Page;
-import hu.indicium.cms.page.PageMapper;
-import hu.indicium.cms.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import hu.indicium.cms.menu.dto.MenuItemDTO;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -15,9 +11,11 @@ import java.util.stream.Collectors;
 @Service
 public class MenuServiceImpl implements MenuService{
     private final MenuRepository menuRepository;
+    private final MenuItemRepository menuItemRepository;
 
-    public MenuServiceImpl(MenuRepository menuRepository) {
+    public MenuServiceImpl(MenuRepository menuRepository, MenuItemRepository menuItemRepository) {
         this.menuRepository = menuRepository;
+        this.menuItemRepository = menuItemRepository;
     }
 
     //POST
@@ -33,6 +31,9 @@ public class MenuServiceImpl implements MenuService{
     @Override
     public MenuDTO getMenuById(Long menuId) {
         Menu menu = findById(menuId);
+        if(menu == null){
+            return null;
+        }
         return MenuMapper.map(menu);
     }
 
@@ -65,6 +66,15 @@ public class MenuServiceImpl implements MenuService{
     public void deleteMenu(Long menuId) {
         Menu menu = findById(menuId);
         menuRepository.delete(menu);
+    }
+
+    @Override
+    public MenuItemDTO createMenuItem(MenuItemDTO menuItemDTO, Menu menu) {
+        MenuItem menuItem = MenuMapper.map(menuItemDTO);
+        menuItem.setMenu(menu);
+        menuItem = menuItemRepository.save(menuItem);
+
+        return MenuMapper.map(menuItem);
     }
 
     private Menu findById(Long menuId){

@@ -19,8 +19,8 @@ import java.util.List;
 @Setter
 public class Page {
     @Id
-    @SequenceGenerator(name = "user_id_generator", sequenceName = "user_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_generator")
+    @SequenceGenerator(name = "page_id_generator", sequenceName = "page_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "page_id_generator")
     private Long id;
     private String title;
     private String slug;

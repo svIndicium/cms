@@ -8,8 +8,10 @@ import hu.indicium.cms.page.request.CreatePageRequest;
 import hu.indicium.cms.page.request.UpdatePageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -26,6 +28,7 @@ public class PageController {
         this.menuService = menuService;
     }
 
+    @PreAuthorize("hasAnyAuthority('Admin', 'Auteur')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public PageDTO createPage(@RequestBody CreatePageRequest page){
@@ -44,14 +47,17 @@ public class PageController {
         return pageService.getPageById(pageId);
     }
 
+    @PreAuthorize("hasAnyAuthority('Admin', 'Auteur')")
     @PutMapping("/{pageId}")
     @ResponseStatus(HttpStatus.OK)
-    public PageDTO updatePage(@RequestBody UpdatePageRequest page, @PathVariable Long pageId){
+    public PageDTO updatePage(@RequestBody UpdatePageRequest page, @PathVariable Long pageId, Principal principal){
         PageDTO pageDTO = PageMapper.map(page);
+        pageDTO.setLastEditedBy(principal.getName());
         pageDTO.setId(pageId);
         return pageService.updatePage(pageDTO);
     }
 
+    @PreAuthorize("hasAnyAuthority('Admin', 'Auteur')")
     @DeleteMapping("/{pageId}")
     @ResponseStatus(HttpStatus.OK)
     public void deletePage(@PathVariable Long pageId){

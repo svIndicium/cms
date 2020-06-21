@@ -12,9 +12,11 @@ public class PageMapper {
         ModelMapper modelMapper = new ModelMapper();
         PageDTO pageDTO = modelMapper.map(page, PageDTO.class);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd | HH:mm:ss");
+        if(page.getLastEdit() != null){
+            String dateString = format.format(page.getLastEdit());
+            pageDTO.setLastEdit(dateString);
+        }
 
-        String dateString = format.format(page.getLastEdit());
-        pageDTO.setLastEdit(dateString);
         return pageDTO;
     }
 

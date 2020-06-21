@@ -44,7 +44,6 @@ public class PageServiceImpl implements PageService {
         Page findPage = findById(pageDTO.getId());
         Page page = PageMapper.map(pageDTO);
 
-        page.setLastEditedBy(findPage.getLastEditedBy());
         page.setLastEdit(findPage.getLastEdit());
 
         page = pageRepository.save(page);

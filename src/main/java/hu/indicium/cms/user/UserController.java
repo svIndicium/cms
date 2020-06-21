@@ -24,7 +24,6 @@ public class UserController {
         this.userService = userService;
     }
     //POST
-    @PreAuthorize("hasAuthority('Admin')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createUser(@RequestBody CreateUserRequest createUserRequest){

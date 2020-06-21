@@ -13,8 +13,8 @@ import javax.persistence.*;
 @Setter
 public class Content {
     @Id
-    @SequenceGenerator(name = "user_id_generator", sequenceName = "user_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_generator")
+    @SequenceGenerator(name = "content_id_generator", sequenceName = "content_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "content_id_generator")
     private Long id;
     private String title;
     @Column(name = "text", columnDefinition = "TEXT")
