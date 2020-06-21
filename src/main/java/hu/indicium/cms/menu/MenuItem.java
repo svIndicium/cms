@@ -14,8 +14,8 @@ import javax.persistence.*;
 @Setter
 public class MenuItem {
     @Id
-    @SequenceGenerator(name = "user_id_generator", sequenceName = "user_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_generator")
+    @SequenceGenerator(name = "menu_item_id_generator", sequenceName = "menu_item_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "menu_item_id_generator")
     private Long id;
     private String naam;
     @ManyToOne

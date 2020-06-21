@@ -1,6 +1,7 @@
 package hu.indicium.cms.menu;
 
 import hu.indicium.cms.menu.dto.MenuDTO;
+import hu.indicium.cms.menu.dto.MenuItemDTO;
 import hu.indicium.cms.menu.request.CreateMenuRequest;
 import hu.indicium.cms.user.dto.UserDTO;
 import hu.indicium.cms.user.request.CreateUserRequest;
@@ -21,4 +22,7 @@ public interface MenuService {
 
     //DELETE
     void deleteMenu(Long menuId);
+
+    //POST MENU ITEM
+    MenuItemDTO createMenuItem(MenuItemDTO menuItemDTO, Menu menu);
 }
