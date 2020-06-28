@@ -1,0 +1,4175 @@
+{
+	"info": {
+		"_postman_id": "7c4a44b9-83f4-4aa6-a04e-371b58a6c409",
+		"name": "cms ipass 2020",
+		"description": "Api Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "getAuthToken",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "refreshToken",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refreshToken\": \"<string>\",\n    \"token\": \"<string>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/refresh",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refreshToken\": \"<string>\",\n    \"token\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/refresh",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refreshToken\": \"<string>\",\n    \"token\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/refresh",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refreshToken\": \"<string>\",\n    \"token\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/refresh",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refreshToken\": \"<string>\",\n    \"token\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/refresh",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refreshToken\": \"<string>\",\n    \"token\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/refresh",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "contents",
+					"item": [
+						{
+							"name": "{content Id}",
+							"item": [
+								{
+									"name": "getContentById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contents/:contentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents",
+												":contentId"
+											],
+											"variable": [
+												{
+													"id": "1f35b8d5-3f89-4d1f-9f14-cd0d21293442",
+													"key": "contentId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) contentId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "updateContent",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contents/:contentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents",
+												":contentId"
+											],
+											"variable": [
+												{
+													"id": "4c14cb44-a209-44fd-82bb-2965220d76c1",
+													"key": "contentId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) contentId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "deleteContent",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contents/:contentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents",
+												":contentId"
+											],
+											"variable": [
+												{
+													"id": "cc40f32a-c1df-4f02-996a-12f6bc70dc0f",
+													"key": "contentId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) contentId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/contents/:contentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"contents",
+														":contentId"
+													],
+													"variable": [
+														{
+															"key": "contentId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "getAllContent",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/contents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"contents"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "createContent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/contents",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"contents"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"pageId\": \"<long>\",\n    \"text\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/contents",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"contents"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "menus",
+					"item": [
+						{
+							"name": "{menu Id}",
+							"item": [
+								{
+									"name": "getMenu",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/menus/:menuId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus",
+												":menuId"
+											],
+											"variable": [
+												{
+													"id": "5421164e-30e0-4996-b879-b12741370039",
+													"key": "menuId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) menuId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "createMenuItem",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"naam\": \"<string>\",\n    \"pageId\": \"<long>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/menus/:menuId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus",
+												":menuId"
+											],
+											"variable": [
+												{
+													"id": "cfef8e44-53d8-4c35-843b-8dcb32341b8b",
+													"key": "menuId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) menuId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"naam\": \"<string>\",\n    \"pageId\": \"<long>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"naam\": \"<string>\",\n    \"pageId\": \"<long>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"naam\": \"<string>\",\n    \"pageId\": \"<long>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"naam\": \"<string>\",\n    \"pageId\": \"<long>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"naam\": \"<string>\",\n    \"pageId\": \"<long>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "updateMenu",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/menus/:menuId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus",
+												":menuId"
+											],
+											"variable": [
+												{
+													"id": "7d449c17-4ee6-4bef-8f0d-d7ddb1064704",
+													"key": "menuId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) menuId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "deleteMenu",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/menus/:menuId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus",
+												":menuId"
+											],
+											"variable": [
+												{
+													"id": "a974a733-a70f-4ffb-9990-9584451f1a25",
+													"key": "menuId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) menuId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/menus/:menuId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"menus",
+														":menuId"
+													],
+													"variable": [
+														{
+															"key": "menuId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "getAllMenus",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/menus",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"menus"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "createMenu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/menus",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"menus"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<long>\",\n    \"naam\": \"<string>\",\n    \"page\": {\n        \"contents\": [\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            },\n            {\n                \"id\": \"<long>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                },\n                \"text\": \"<string>\",\n                \"title\": \"<string>\"\n            }\n        ],\n        \"id\": \"<long>\",\n        \"lastEdit\": \"<dateTime>\",\n        \"lastEditedBy\": \"<string>\",\n        \"menuItems\": [\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menu\": {\n                    \"id\": \"<long>\",\n                    \"menuItems\": [\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        },\n                        {\n                            \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                        }\n                    ],\n                    \"naam\": \"<string>\",\n                    \"page\": {\n                        \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                    }\n                },\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"menus\": [\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            },\n            {\n                \"id\": \"<long>\",\n                \"menuItems\": [\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    },\n                    {\n                        \"value\": \"<Circular reference to #/components/schemas/MenuItem detected>\"\n                    }\n                ],\n                \"naam\": \"<string>\",\n                \"page\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Page detected>\"\n                }\n            }\n        ],\n        \"slug\": \"<string>\",\n        \"title\": \"<string>\"\n    }\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/menus",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"menus"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "pages",
+					"item": [
+						{
+							"name": "{page Id}",
+							"item": [
+								{
+									"name": "getPage",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pages/:pageId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages",
+												":pageId"
+											],
+											"variable": [
+												{
+													"id": "6c60326c-2421-4108-a024-fdcfb2a6c551",
+													"key": "pageId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) pageId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "updatePage",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pages/:pageId?name=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages",
+												":pageId"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"id": "c2a76628-3a68-4a19-b2e2-7fb5bb0b9c8c",
+													"key": "pageId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) pageId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId?name=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId?name=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId?name=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId?name=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId?name=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "deletePage",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pages/:pageId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages",
+												":pageId"
+											],
+											"variable": [
+												{
+													"id": "13bacf80-ca7c-41f3-978f-924365b5f121",
+													"key": "pageId",
+													"value": "<long>",
+													"type": "string",
+													"description": "(Required) pageId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pages/:pageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pages",
+														":pageId"
+													],
+													"variable": [
+														{
+															"key": "pageId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "getPages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/pages",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pages"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "createPage",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pages",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pages"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"slug\": \"<string>\",\n    \"title\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pages"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "{user Id}",
+							"item": [
+								{
+									"name": "getUser",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"id": "399e5e75-2a38-4889-b779-859111cfe6ac",
+													"key": "userId",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) userId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "updateUser",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"<string>\",\n    \"role\": \"<integer>\"\n}",
+											"options": {
+												"raw": {}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"id": "96de2625-22bb-4e31-9f75-4b7739e29d95",
+													"key": "userId",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) userId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"email\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"email\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"email\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"email\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"email\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "deleteUser",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:userId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":userId"
+											],
+											"variable": [
+												{
+													"id": "fffd2a1b-85ce-4b2c-9fd9-942a6b6b4e7b",
+													"key": "userId",
+													"value": "<string>",
+													"type": "string",
+													"description": "(Required) userId"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "userId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "getUsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "createUser",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"<integer>\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"role\": \"<integer>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "199a5742-2b37-4640-94a9-71da942a4bfc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6597174c-b830-41eb-bcc5-bc5fb19331df",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d137a40e-08e7-4588-8555-4780fea2029d",
+			"key": "baseUrl",
+			"value": "//localhost:8080/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
